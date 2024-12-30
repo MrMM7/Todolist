@@ -2,9 +2,9 @@
 
 bad todolist adsdasd adasd sa
 
-| Version | Package  |
-| ------- | :------- |
-| 1.0     | React.js |
-| 2.0     | React.js |
-| 3.0     | React.js |
-| 4.0     | React.js |
+| Version | Package      |
+| ------- | :----------- |
+| 2.0     | Package name |
+| 3.0     | Package name |
+| 1.0     | Package name |
+| 4.0     | Package name |
