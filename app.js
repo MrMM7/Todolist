@@ -2,10 +2,11 @@ let $ = document;
 
 let btn = $.getElementById("btn");
 let input = $.getElementById("inputBox");
+let inputValue = input.value;
 let list = $.getElementById("list");
 btn.addEventListener("click", function () {
   let newLiElem = $.createElement("li");
-  newLiElem.innerHTML = input.value;
+  newLiElem.innerHTML = inputValue;
   newLiElem.style.fontSize = "20px";
   newLiElem.style.listStyle = "none";
   let newBtnElem = $.createElement("button");
@@ -26,10 +27,10 @@ btn.addEventListener("click", function () {
       newLiElem.style.textDecoration = "line-through";
     }
   });
-  if (input.value) {
+  if (inputValue) {
     list.append(newLiElem);
     newLiElem.append(newCheckboxElem);
     newLiElem.append(newBtnElem);
   }
-  input.value = "";
+  inputValue = "";
 });
