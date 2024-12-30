@@ -1,4 +1,3 @@
 # First-TodoList
 
-bad todolist <br>
-dadadas
+bad todolist
