@@ -4,9 +4,12 @@ let btn = $.getElementById("btn");
 let input = $.getElementById("inputBox");
 let list = $.getElementById("list");
 let btn2 = $.getElementById("btn2");
+let body = $.body;
+
+// Functions
 function addTodo() {
-  let inputValue = input.value.trim();
   let newLiElem = $.createElement("li");
+  let inputValue = input.value.trim();
   newLiElem.innerHTML = inputValue;
   newLiElem.style.fontSize = "20px";
   newLiElem.style.listStyle = "none";
@@ -37,11 +40,19 @@ function addTodo() {
 function clearAll() {
   list.innerHTML = "";
 }
+
 btn2.addEventListener("click", clearAll);
 btn.addEventListener("click", addTodo);
+
+// Add Todo using Enter
 input.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     addTodo();
     input.value = "";
   }
+});
+
+// Auto Focus on input when Typing
+body.addEventListener("keydown", function () {
+  input.focus(input);
 });
