@@ -2,9 +2,10 @@ let $ = document;
 
 let btn = $.getElementById("btn");
 let input = $.getElementById("inputBox");
-let inputValue = input.value;
 let list = $.getElementById("list");
-btn.addEventListener("click", function () {
+let btn2 = $.getElementById("btn2");
+function addTodo() {
+  let inputValue = input.value.trim();
   let newLiElem = $.createElement("li");
   newLiElem.innerHTML = inputValue;
   newLiElem.style.fontSize = "20px";
@@ -32,5 +33,15 @@ btn.addEventListener("click", function () {
     newLiElem.append(newCheckboxElem);
     newLiElem.append(newBtnElem);
   }
-  inputValue = "";
+}
+function clearAll() {
+  list.innerHTML = "";
+}
+btn2.addEventListener("click", clearAll);
+btn.addEventListener("click", addTodo);
+input.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    addTodo();
+    input.value = "";
+  }
 });
